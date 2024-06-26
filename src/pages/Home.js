@@ -11,13 +11,15 @@ export default function Home() {
     loadUsers();
   }, []);
 
+  const api_url = "https://full-stack-user-management-project.onrender.com";
+  
   const loadUsers = async () => {
-    const result = await axios.get("http://localhost:8080/users");
+    const result = await axios.get("${api_url}/users");
     setUsers(result.data);
   };
 
   const deleteUser = async (id) => {
-    await axios.delete(`http://localhost:8080/user/${id}`);
+    await axios.delete(`${api_url}/user/${id}`);
     loadUsers();
   };
 
