@@ -15,8 +15,10 @@ export default function ViewUser() {
     loadUser();
   }, []);
 
+  const api_url = "https://full-stack-user-management-project.onrender.com"
+  
   const loadUser = async () => {
-    const result = await axios.get(`http://localhost:8080/user/${id}`);
+    const result = await axios.get(`${api_url}/user/${id}`);
     setUser(result.data);
   };
 
