@@ -44,10 +44,11 @@ export default function AddUser() {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 
+  const api_url = "https://full-stack-user-management-project.onrender.com"
   const onSubmit = async (e) => {
     e.preventDefault();
     if(validate()){
-      await axios.post("http://localhost:8080/user", user);
+      await axios.post(api_url, user);
       navigate("/");
     }
   };
